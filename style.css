@@ -138,19 +138,16 @@ svg {
   background-color: var(--main-color-accent);
   opacity: 0;
   z-index: -1;
-  overflow-x: hidden;
 }
 
 /* Make mobile navigation visible */
+.no-scroll {
+  overflow: hidden;
+}
+
 .navOn .headerNavContainer {
   opacity: 1;
   z-index: 2;
-}
-.navOn .mainContainerOne {
-  position: fixed;
-  height: 0px;
-  opacity: 0;
-  z-index: -1;
 }
 
 /*///////////////////////////////*/
@@ -328,8 +325,6 @@ svg {
   object-fit: cover;
 }
 
-.menu-list-img-container #kola-tiramisu {
-}
 .image-wrapper.banankaka {
   bottom: 0px;
 }
@@ -364,9 +359,6 @@ svg {
 .image-wrapper.mandelkaka {
   right: 80px;
   bottom: 0px;
-}
-
-.menu-list-img-container #mandelkaka {
 }
 
 .menu-list p {
