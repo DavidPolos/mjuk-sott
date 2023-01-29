@@ -7,6 +7,10 @@
   --secondary-color: #cc6026;
 }
 
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   background-color: var(--white-color);
   margin: 0;
@@ -23,6 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - (12vw + 46px));
+  /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);*/
   background-image: url(bakelse.png);
   background-size: cover;
   background-position: right 55% top 20%;
@@ -50,7 +55,7 @@ a {
   max-width: 500px;
   margin: 30px;
   padding: 25px;
-  font-family: "Montserrat", sans-serif;
+
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
@@ -126,7 +131,7 @@ svg {
 }
 
 .headerNavContainer {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: calc(100vh - (12vw + 46px));
   bottom: 0;
@@ -137,10 +142,17 @@ svg {
 }
 
 /* Make mobile navigation visible */
-.navOn {
+.navOn .headerNavContainer {
   opacity: 1;
   z-index: 2;
 }
+.navOn .mainContainerOne {
+  position: fixed;
+  height: 0px;
+  opacity: 0;
+  z-index: -1;
+}
+
 /*///////////////////////////////*/
 
 .button {
@@ -203,6 +215,7 @@ svg {
   }
   .bakelse {
     height: 120%;
+
     background-image: url(bakelse.png);
     background-repeat: no-repeat;
     background-position: 30%;
@@ -228,7 +241,7 @@ svg {
     position: relative;
     padding: 15px;
     padding-top: 0px;
-    font-family: "Montserrat", sans-serif;
+
     font-size: 1.1rem;
   }
 }
@@ -280,8 +293,154 @@ svg {
   text-align: center;
   color: var(--main-color);
 }
+.menu-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-list li {
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: start;
+  padding-bottom: 20px;
+}
+.menu-list-img-container {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.image-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  right: 180px;
+  bottom: 60px;
+}
 
-/* Menu */
+.image-wrapper img {
+  height: 140%;
+  object-fit: cover;
+}
+
+.menu-list-img-container #kola-tiramisu {
+}
+.image-wrapper.banankaka {
+  bottom: 0px;
+}
+.image-wrapper.tres-leches {
+  bottom: 0;
+  right: 70px;
+}
+.image-wrapper #tres-leches {
+  height: 100%;
+}
+.image-wrapper.bostonkaka {
+  right: 230px;
+  bottom: 0;
+}
+
+.image-wrapper #chokladkaka {
+  height: 100%;
+}
+.image-wrapper.chokladkaka {
+  right: 100px;
+  bottom: 0;
+}
+
+.image-wrapper.rulltårta {
+  right: 150px;
+  bottom: 25px;
+}
+
+.image-wrapper #mandelkaka {
+  height: 120%;
+}
+.image-wrapper.mandelkaka {
+  right: 80px;
+  bottom: 0px;
+}
+
+.menu-list-img-container #mandelkaka {
+}
+
+.menu-list p {
+  font-weight: 600;
+  max-width: 400px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+@media screen and (max-width: 799px) {
+  .menu-list p {
+    padding: 0 10px;
+  }
+  .menu-list-img-container {
+    width: 300px;
+    height: 300px;
+  }
+  .image-wrapper {
+    right: 130px;
+  }
+  .image-wrapper.bostonkaka {
+    right: 180px;
+    bottom: 0;
+  }
+  .image-wrapper.chokladkaka {
+    right: 60px;
+  }
+  .image-wrapper.rulltårta {
+    right: 100px;
+    bottom: 25px;
+  }
+  .image-wrapper.mandelkaka {
+    right: 55px;
+    bottom: 0px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .menu-list-img-container {
+    width: 180px;
+    height: 180px;
+  }
+  .image-wrapper {
+    right: 80px;
+    bottom: 40px;
+  }
+  .menu-list li p {
+    font-size: 0.8rem;
+  }
+  .image-wrapper.tres-leches {
+    bottom: 0;
+    right: 30px;
+  }
+  .image-wrapper.bostonkaka {
+    right: 135px;
+    bottom: 0;
+  }
+  .image-wrapper.chokladkaka {
+    right: 40px;
+    bottom: 0;
+  }
+  .image-wrapper.rulltårta {
+    right: 65px;
+    bottom: 15px;
+  }
+  .image-wrapper.mandelkaka {
+    right: 30px;
+    bottom: 0px;
+  }
+  .image-wrapper #bostonkaka {
+    height: 160%;
+  }
+}
+
+/*//Menu */
 
 /* Kontakt */
 
@@ -301,7 +460,7 @@ form {
   text-align: center;
   align-items: center;
   padding: 2rem;
-  border: solid 1px black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 input {
@@ -333,6 +492,7 @@ textarea {
 }
 
 .formContainer p {
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   max-width: 600px;
