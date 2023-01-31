@@ -12,7 +12,7 @@
 }
 
 .sticky-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -27,6 +27,7 @@ body {
 }
 
 h1 {
+  font-weight: 600;
   text-align: center;
   font-family: "Tangerine", cursive;
   font-size: calc((4 - 1) * 1.2vw + 4rem);
@@ -157,6 +158,9 @@ svg {
     padding-left: 3vw;
     padding-right: 3vw;
   }
+  .sticky-header {
+    position: relative;
+  }
   .headerNavContainer {
     opacity: 1;
     z-index: 1;
@@ -218,6 +222,7 @@ svg {
 .home-container {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 25px;
 }
 
 #bakelse {
