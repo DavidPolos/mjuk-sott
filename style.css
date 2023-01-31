@@ -136,7 +136,7 @@ svg {
 
 .navOn .headerNavContainer {
   opacity: 1;
-  z-index: 2;
+  z-index: 1;
 }
 
 /*///////////////////////////////*/
